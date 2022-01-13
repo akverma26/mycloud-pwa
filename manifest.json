@@ -9,17 +9,17 @@
     "description": "MyCloud",
     "icons": [
         {
-            "src": "images/icon/seo128x128.png",
+            "src": "images/icons/seo128x128.png",
             "sizes": "128x128",
             "type": "image/png"
         },
         {
-            "src": "images/icon/seo256x256.png",
+            "src": "images/icons/seo256x256.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "images/icon/seo512x512.png",
+            "src": "images/icons/seo512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
