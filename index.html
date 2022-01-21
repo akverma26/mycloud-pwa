@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- Responsive -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>MyCloud</title>
 
-    <!-- Title -->
-    <title>MyCloud</title>
+        <!-- Meta Tags required for Progressive Web App -->
+        <meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
+        <meta name="theme-color" content="black" />
 
-    <!-- Meta Tags required for Progressive Web App -->
-    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-    <meta name="theme-color" content="black">
+        <!-- Manifest File link for PWA -->
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body>
+        <h1>Welcome to MyCloud V-0.0.1</h1>
 
-    <!-- Manifest File link -->
-    <link rel="manifest" href="manifest.json">
-</head>
-<body>
-    <h1>Welcome to MyCloud V-0.0.1</h1>
+        <div class="simple-border support-check">
+            <h3>Support Check</h3>
+            <div class="service-worker">
+                <span>Service Worker Support: </span>
+                <span class="output"></span>
+            </div>
+            <div class="push-manager">
+                <span>Push Manager: </span>
+                <span class="output"></span>
+            </div>
+        </div>
 
-    <script>
-	window.addEventListener('load', () => {
-        registerSW();
-	});
+        <div class="simple-border check-notification-permission">
+            <h3>Check Notification Permission</h3>
+            <button>Check</button>
+            <div class="output"></div>
+        </div>
 
-	// Register the Service Worker
-	async function registerSW() {
-        if ('serviceWorker' in navigator) {
-            try {
-            await navigator
-                .serviceWorker
-                .register('sw.js');
-            }
-            catch (e) {
-                console.log('SW registration failed');
-            }
-        }
-	}
-    </script>
-</body>
+        <div class="simple-border show-notification">
+            <h3>Show Notification</h3>
+            <button>Show</button>
+        </div>
+
+        <div class="simple-border register-service-worker">
+            <h3>Register Service Worker</h3>
+            <button id="register">Register</button>
+            <button id="unregister">UnRegister</button>
+            <button id="get-status">Get Status</button>
+            <div class="output"></div>
+        </div>
+
+        <!-- <div class="simple-border cache-management">
+            <h3>PWA Cache Management</h3>
+            <button id="install">Install</button>
+            <button id="clear">Clear Cache</button>
+            <div class="output"></div>
+        </div> -->
+
+        <div class="simple-border">
+            <h3>Other Functions</h3>
+            <button id="">Show</button>
+        </div>
+        
+        <script src="./scripts/show_notification.js"></script>
+        <script src="./scripts/service_worker/service_worker_registration.js"></script>
+    </body>
 </html>
