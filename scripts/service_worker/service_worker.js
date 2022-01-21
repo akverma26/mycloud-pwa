@@ -2,21 +2,26 @@
 const SERVER_URL = "https://akvcloudapi.herokuapp.com/push-notification";
 const VAPID_PUBLIC_KEY = "BHO_h5mRkL8oNzXk-SEZ2B8NCGJswQi5Ju7swcNipQ7v_ISPRJD3fhfM8UCMi9nHmSApGdMxU-Hy2ssFDrEBHT0";
 
-const getSubscriptionOrSubscribe = async () => {
-    let subscription = await self.registration.pushManager.getSubscription();
-    if (!subscription) {
-        const options = {
-            applicationServerKey: VAPID_PUBLIC_KEY,
-            userVisibleOnly: true
-        }
-        subscription = await self.registration
-            .pushManager.subscribe(options)
-    }
-    return subscription;
-}
+// const getSubscriptionOrSubscribe = async () => {
+//     let subscription = await self.registration.pushManager.getSubscription();
+//     if (!subscription) {
+//         const options = {
+//             applicationServerKey: VAPID_PUBLIC_KEY,
+//             userVisibleOnly: true
+//         }
+//         subscription = await self.registration
+//             .pushManager.subscribe(options)
+//     }
+//     return subscription;
+// }
 
 const saveSubscriptionToServer = async () => {
-    const subscription = await getSubscriptionOrSubscribe();
+    const options = {
+        applicationServerKey: VAPID_PUBLIC_KEY,
+        userVisibleOnly: true
+    }
+    const subscription = await self.registration
+        .pushManager.subscribe(options)
     let url = `${SERVER_URL}/save-subscription`;
     console.log(url)
     fetch(
@@ -48,7 +53,7 @@ const showNotificationSW = (title, options = {}) => {
     self.registration.showNotification(title, _options);
 }
 
-self.addEventListener('activate', async () => {
+self.addEventListener('install', async () => {
     try {
         saveSubscriptionToServer();
     } catch (err) {
@@ -58,5 +63,6 @@ self.addEventListener('activate', async () => {
 
 self.addEventListener("push", async (event) => {
     let data = event.data.json();
+    console.log(data)
     showNotificationSW(data.title, data.options);
 });
