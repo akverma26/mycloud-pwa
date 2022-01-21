@@ -1,4 +1,5 @@
-const SERVER_URL = "http://localhost:3000/push-notification";
+// const SERVER_URL = "http://localhost:3000/push-notification";
+const SERVER_URL = "http://34.219.77.89/push-notification";
 const VAPID_PUBLIC_KEY = "BHO_h5mRkL8oNzXk-SEZ2B8NCGJswQi5Ju7swcNipQ7v_ISPRJD3fhfM8UCMi9nHmSApGdMxU-Hy2ssFDrEBHT0";
 
 const getSubscriptionOrSubscribe = async () => {
