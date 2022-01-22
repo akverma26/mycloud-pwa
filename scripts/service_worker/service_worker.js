@@ -2,19 +2,6 @@
 const SERVER_URL = "https://akvcloudapi.herokuapp.com/push-notification";
 const VAPID_PUBLIC_KEY = "BHO_h5mRkL8oNzXk-SEZ2B8NCGJswQi5Ju7swcNipQ7v_ISPRJD3fhfM8UCMi9nHmSApGdMxU-Hy2ssFDrEBHT0";
 
-// const getSubscriptionOrSubscribe = async () => {
-//     let subscription = await self.registration.pushManager.getSubscription();
-//     if (!subscription) {
-//         const options = {
-//             applicationServerKey: VAPID_PUBLIC_KEY,
-//             userVisibleOnly: true
-//         }
-//         subscription = await self.registration
-//             .pushManager.subscribe(options)
-//     }
-//     return subscription;
-// }
-
 const saveSubscriptionToServer = async () => {
     const options = {
         applicationServerKey: VAPID_PUBLIC_KEY,
@@ -43,7 +30,7 @@ const showNotificationSW = (title, options = {}) => {
     let _options = {
         body: "This is notification body",
         icon: "../../images/icons/seo128x128.png",
-        vibrate: [100, 50, 100],
+        vibrate: [1000, 500, 1000, 500, 1000, 500, 1000, 500],
         data: {
             dateOfArrival: Date.now(),
             primaryKey: 1,
@@ -62,7 +49,7 @@ self.addEventListener('activate', async () => {
 });
 
 self.addEventListener("push", async (event) => {
+    console.log("Push received...");
     let data = event.data.json();
-    console.log(data)
     showNotificationSW(data.title, data.options);
 });
