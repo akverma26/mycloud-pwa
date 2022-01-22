@@ -53,7 +53,7 @@ const showNotificationSW = (title, options = {}) => {
     self.registration.showNotification(title, _options);
 }
 
-self.addEventListener('install', async () => {
+self.addEventListener('activate', async () => {
     try {
         saveSubscriptionToServer();
     } catch (err) {

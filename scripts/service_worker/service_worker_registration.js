@@ -5,6 +5,11 @@ window.addEventListener("load", () => {
     registerServiceWorker();
 });
 
+navigator.serviceWorker.addEventListener('statechange', (e) => {
+    document
+        .querySelector(".register-service-worker .state").innerHTML = e.target.state;
+});
+
 const getSWRegistration = () => {
     navigator.serviceWorker.getRegistration(SERVICE_WORKER_PATH)
         .then((sw_registration) => {
