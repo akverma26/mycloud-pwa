@@ -1,4 +1,4 @@
-const SERVICE_WORKER_PATH = "./scripts/service_worker/service_worker.js";
+const SERVICE_WORKER_PATH = "./MyCloudPWA/scripts/service_worker/service_worker.js";
 let serviceWorkerRegistration = null;
 
 window.addEventListener("load", () => {
@@ -20,7 +20,7 @@ const getSWRegistration = () => {
 }
 
 const registerServiceWorker = () => {
-    navigator.serviceWorker.register(SERVICE_WORKER_PATH)
+    navigator.serviceWorker.register(SERVICE_WORKER_PATH, {scope: "./MyCloudPWA/scripts/service_worker/"})
         .then((sw_registration) => {
             serviceWorkerRegistration = sw_registration;
             setTimeout(()=>getSWRegistration(), 100);
