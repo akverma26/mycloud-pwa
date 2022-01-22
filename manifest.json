@@ -1,7 +1,7 @@
 {
     "name": "MyCloud",
     "short_name": "MyCloud",
-    "start_url": "https://akverma26.github.io/MyCloudPWA/scripts/service_worker/",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#fafafa",
     "theme_color": "#555555",

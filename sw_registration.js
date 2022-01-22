@@ -1,13 +1,9 @@
-const SERVICE_WORKER_PATH = "./scripts/service_worker/service_worker.js";
+const SERVICE_WORKER_PATH = './sw.js';
+
 let serviceWorkerRegistration = null;
 
 window.addEventListener("load", () => {
     registerServiceWorker();
-});
-
-navigator.serviceWorker.addEventListener('statechange', (e) => {
-    document
-        .querySelector(".register-service-worker .state").innerHTML = e.target.state;
 });
 
 const getSWRegistration = () => {
@@ -20,10 +16,10 @@ const getSWRegistration = () => {
 }
 
 const registerServiceWorker = () => {
-    navigator.serviceWorker.register(SERVICE_WORKER_PATH, {scope: "./scripts/service_worker/"})
+    navigator.serviceWorker.register(SERVICE_WORKER_PATH)
         .then((sw_registration) => {
             serviceWorkerRegistration = sw_registration;
-            setTimeout(()=>getSWRegistration(), 100);
+            setTimeout(() => getSWRegistration(), 100);
         })
         .catch((err) => {
             console.log(err);
@@ -31,13 +27,13 @@ const registerServiceWorker = () => {
 }
 
 const unRegisterServiceWorker = () => {
-    if(serviceWorkerRegistration){
+    if (serviceWorkerRegistration) {
         serviceWorkerRegistration.unregister().then((unregistered) => {
-            getSWRegistration();
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+                getSWRegistration();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 }
 
