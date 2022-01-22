@@ -3,24 +3,160 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
+header {
+  background: #252525;
+  width: 100vw;
+  color: #e1e1e1;
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-body * {
-  margin: 10px;
+header .middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-button {
-  padding: 5px 10px;
+header .version {
+  color: #c8c8c8;
+  font-size: 10px;
 }
 
-.simple-border {
-  border: 1px solid grey;
-  border-radius: 3px;
+.main {
+  display: none;
+  margin-top: 30px;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.navigation-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation-container button {
+  background: #252525;
+  color: #e1e1e1;
   padding: 20px;
+  min-height: 20vh;
+  margin: 10px;
+  min-width: 40vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.navigation-container button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.new-schedule-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.new-schedule-container > label:not(:first-child) {
+  margin-top: 20px;
+}
+
+.new-schedule-container > input {
+  margin-top: 5px;
+  padding: 3px 10px;
+  width: 100%;
+}
+
+.new-schedule-container button {
+  padding: 5px 10px;
+  margin-top: 20px;
+}
+
+.new-schedule-container .status {
+  color: gray;
+  margin-top: 10px;
+}
+
+.list-today-schedule-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.list-today-schedule-container .schedule {
+  width: 100%;
+  background: whitesmoke;
+  color: #1e1e1e;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin-top: 20px;
+}
+
+.list-today-schedule-container .schedule .title {
+  font-weight: bold;
+}
+
+.list-today-schedule-container .schedule .description {
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.list-today-schedule-container .schedule .notify-from {
+  color: #969696;
+  font-size: 12px;
+}
+
+.list-today-schedule-container .schedule .status {
+  color: #969696;
+  font-size: 12px;
+}
+
+.container {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

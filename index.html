@@ -3,63 +3,86 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8">
-        <meta name="theme-color" content="#018581">
+        <meta name="theme-color" content="#252525">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>MyCloud</title>
-        <meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
+        <meta name="apple-mobile-web-app-status-bar" content="#252525"/>
 
         <link rel="manifest" href="manifest.json"/>
         
         <link rel="stylesheet" href="./css/main.css">
     </head>
     <body>
-        <h1>Welcome to MyCloud V-0.0.1.6</h1>
-
-        <div class="simple-border support-check">
-            <h3>Support Check</h3>
-            <div class="service-worker">
-                <span>Service Worker Support: </span>
-                <span class="output"></span>
+        <header>
+            <div class="middle">
+                <div class="title">MyCloudPWA</div>
+                <div class="version">v1.0.0.1-alpha</div>
             </div>
-            <div class="push-manager">
-                <span>Push Manager: </span>
-                <span class="output"></span>
+        </header>
+        <div class="main">
+            <div class="container navigation-container">
+                <button for=".new-schedule-container" id="new-schedule">New<br>Schedule</button>
+                <button for=".list-today-schedule-container" id="list-today-schedules">List<br>Today's<br>Schedules</button>
+                <button for=".list-today-schedule-container" id="list-all-schedules">List All<br>Schedules</button>
+                <button for=".settings" id="settings">Settings</button>
             </div>
+
+            <div class="container new-schedule-container">
+                <label for="">Title</label>
+                <input type="text" name="" id="title">
+                <label for="">Description</label>
+                <input type="text" name="" id="description">
+                <label for="">Schedule at</label>
+                <input type="datetime-local" name="" id="schedule-time">
+                <label for="">Notify from</label>
+                <input type="datetime-local" name="" id="notify-from">
+                <button>Schedule</button>
+                <div class="status"></div>
+            </div>
+
+            <div class="container list-today-schedule-container"></div>
+        </div>   
+
+        <!--------------------------- TO DO ------------------------>
+
+        <div class="container settings">
+
+            <div class="simple-border support-check">
+                <h3>Support Check</h3>
+                <div class="service-worker">
+                    <span>Service Worker Support: </span>
+                    <span class="output"></span>
+                </div>
+                <div class="push-manager">
+                    <span>Push Manager: </span>
+                    <span class="output"></span>
+                </div>
+            </div>
+
+            <div class="simple-border check-notification-permission">
+                <h3>Check Notification Permission</h3>
+                <button>Check</button>
+                <div class="output"></div>
+            </div>
+
+            <div class="simple-border register-service-worker">
+                <h3>Register Service Worker</h3>
+                <button id="register">Register</button>
+                <button id="unregister">UnRegister</button>
+                <button id="get-status">Get Status</button>
+                <div class="output"></div>
+                <div class="state"></div>
+            </div>
+
         </div>
 
-        <div class="simple-border check-notification-permission">
-            <h3>Check Notification Permission</h3>
-            <button>Check</button>
-            <div class="output"></div>
-        </div>
+        <!--------------------------- TO DO ------------------------>
 
-        <div class="simple-border show-notification">
-            <h3>Show Notification</h3>
-            <button>Show</button>
-        </div>
-
-        <div class="simple-border register-service-worker">
-            <h3>Register Service Worker</h3>
-            <button id="register">Register</button>
-            <button id="unregister">UnRegister</button>
-            <button id="get-status">Get Status</button>
-            <div class="output"></div>
-            <div class="state"></div>
-        </div>
-
-        <!-- <div class="simple-border cache-management">
-            <h3>PWA Cache Management</h3>
-            <button id="install">Install</button>
-            <button id="clear">Clear Cache</button>
-            <div class="output"></div>
-        </div> -->
-
-        <div class="simple-border">
-            <h3>Other Functions</h3>
-            <button id="">Show</button>
-        </div>
-        
         <script src="./sw_registration.js"></script>
         <script src="./scripts/show_notification.js"></script>
+        <script src="./scripts/jquery3.6.0.js"></script>
+        <script src="./scripts/loader.js"></script>
+        <script src="./backend/connect.js"></script>
+        <script src="./main.js"></script>
     </body>
 </html>

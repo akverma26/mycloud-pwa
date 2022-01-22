@@ -33,28 +33,3 @@ const requestNotificationPermission = () => {
         }
     });
 }
-
-document
-    .querySelector(".show-notification button")
-    .addEventListener("click", (event) => {
-        document
-            .querySelector(".check-notification-permission button").click();
-        showDummyNotification();
-    });
-
-const showNotification = (title, options = {}) => {
-    new Notification(title, options)
-}
-
-const showDummyNotification = () => {
-    new Notification(
-        "This is notification title", {
-            body: "This is notification body",
-            icon: "images/icons/seo128x128.png",
-            vibrate: [100, 50, 100],
-            data: {
-                dateOfArrival: Date.now(),
-                primaryKey: 1,
-            },
-        });
-}
