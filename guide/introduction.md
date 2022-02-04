@@ -6,11 +6,9 @@ On the other hand, native apps are better integrated with the operating system a
 
 PWAs give us the ability to create web apps that can enjoy these same advantages.
 
-**References:**
+> ref: https://web.dev/what-are-pwas/
 
-https://web.dev/what-are-pwas/
-
-https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction
+> ref: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction
 
 # Creating a *Simple* PWA
 
@@ -21,12 +19,15 @@ https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction
 2. Add Web App Manifest
 
    > intro: https://web.dev/add-manifest/
+
    > intro: https://developer.mozilla.org/en-US/docs/Web/Manifest
 
    1. Create a `json` file. ex: `manifest.json` (you can name it anything)
 
       > ref: https://web.dev/add-manifest/#create
+
       > ref: https://developer.mozilla.org/en-US/docs/Web/Manifest
+
       > ref: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Installable_PWAs#the_manifest_file
 
    2. And then link this manifest file to your root html file.
@@ -38,14 +39,19 @@ https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction
 3. At last add a service worker
 
    > intro: https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#what_is_a_service_worker
+
    > intro: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers#service_workers_explained
 
    1. Create a javascript file. ex: `sw.js` (again you can name it anything)
 
       > What a service worker can do: https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#what_can_service_workers_do
+
       > ref: https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope
+
       > ref: https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#service_worker_events
+
       > ref: https://web.dev/learn/pwa/service-workers/
+
       > ref: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers#registering_the_service_worker
 
    2. Register this service worker with your website (in your website javascript)
