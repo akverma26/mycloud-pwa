@@ -93,7 +93,7 @@ self.addEventListener('notificationclick', function (e) {
         notification.close();
     } else {
         // clients.openWindow('http://www.example.com');
-        clients.openWindow('/');
+        clients.openWindow('/MyCloudPWA/');
         notification.close();
     }
 });
