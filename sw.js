@@ -154,5 +154,14 @@ self.addEventListener('fetch', event => {
 self.addEventListener("push", async (event) => {
     console.log("Push received...");
     let data = event.data.json();
-    showWebPushNotification(data.title, data.options);
+    self.registration.getNotifications()
+        .then((notifications) => {
+            notifications.map((notification) => {
+                notification.close();
+            });
+            showWebPushNotification(data.title, data.options);
+        })
+        .catch((err) => {
+            console.log(err)
+        });
 });
